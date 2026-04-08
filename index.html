@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joseph Leo</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f5f1;--surface:#fff;--border:#e2e0db;--border-light:#eceae5;--text:#2c2c2c;--text-soft:#5e5e5e;--text-muted:#9a9a9a;--tag-bg:#edece7;--tag-text:#5a5a5a}
+[data-theme=dark]{--bg:#1a1a1c;--surface:#222225;--border:#3a3a40;--border-light:#2e2e33;--text:#e8e6e3;--text-soft:#b0b0b5;--text-muted:#7a7a80;--tag-bg:#2a2a2f;--tag-text:#a0a0a5}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+::selection{background:rgba(44,44,44,.15)}
+a{color:var(--text)}
+.page-wrap{max-width:680px;margin:0 auto;padding:5rem 2rem 4rem}
+
+.theme-toggle{position:fixed;top:1.25rem;right:1.5rem;z-index:200;width:36px;height:36px;background:var(--surface);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s;font-size:.9rem}
+.theme-toggle:hover{transform:scale(1.1);border-color:var(--text-muted)}
+
+.side-links{position:fixed;left:1.5rem;bottom:2rem;z-index:100;display:flex;flex-direction:column;gap:.75rem;align-items:center}
+.side-links::after{content:'';width:1px;height:60px;background:var(--border);margin-top:.5rem}
+.side-links a{color:var(--text-muted);transition:color .2s,transform .2s;display:flex}
+.side-links a:hover{color:var(--text);transform:translateY(-2px)}
+.side-links a svg{width:18px;height:18px}
+
+.nav-dots{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:.85rem;align-items:center}
+.nav-dot{width:10px;height:10px;border-radius:50%;background:var(--border);cursor:pointer;transition:all .25s;border:none;padding:0;position:relative}
+.nav-dot:hover{background:var(--text-muted);transform:scale(1.3)}
+.nav-dot.active{background:var(--text-soft);transform:scale(1.4)}
+.nav-dot::before{content:attr(data-label);position:absolute;right:20px;top:50%;transform:translateY(-50%);font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:var(--text-muted);background:var(--surface);border:1px solid var(--border);padding:.2rem .5rem;border-radius:4px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.nav-dot:hover::before{opacity:1}
+
+/* HERO */
+.hero{margin-bottom:3.5rem}
+.hero-label{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--text-muted);letter-spacing:.03em;margin-bottom:2.5rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.dot{width:7px;height:7px;background:#4ade80;border-radius:50%;animation:pulse 2.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.label-tag{display:inline-block;padding:.1rem .5rem;border-radius:4px;font-size:.72rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.label-tag.year{background:#e8e8e4;color:#6b6b6b}
+.label-tag.summer{background:#d4eadf;color:#4a8c6a}
+.label-tag.fall{background:#eeddd0;color:#9a7359}
+[data-theme=dark] .label-tag.year{background:#3a3a3f;color:#a0a0a5}
+[data-theme=dark] .label-tag.summer{background:#1e3a2a;color:#6cc090}
+[data-theme=dark] .label-tag.fall{background:#3a2e22;color:#c9a07a}
+
+.hero-greeting{font-size:1.1rem;color:var(--text-soft);margin-bottom:.6rem}
+.hero-tagline{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--text-muted);margin-bottom:1.75rem;min-height:1.4em}
+
+.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(2.4rem,5vw,3.4rem);line-height:1.15;letter-spacing:-.025em;font-weight:400;margin-bottom:1.25rem}
+.hero h1 em{font-style:italic;color:var(--text-soft);display:inline-block;min-width:3ch}
+
+/* Cycling word animation */
+@keyframes fadeWord{0%{opacity:0;transform:translateY(6px)}10%{opacity:1;transform:translateY(0)}90%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-6px)}}
+
+.hero-blurb{font-size:1.02rem;color:var(--text-soft);line-height:1.75;margin-bottom:.6rem}
+.hero-blurb a,.about p a{color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);font-weight:600;transition:all .2s}
+.hero-blurb a:hover,.about p a:hover{border-color:var(--text)}
+.hero-location{font-size:.92rem;color:var(--text-muted);font-style:italic}
+
+.section{margin-bottom:3rem;padding-top:1.5rem;border-top:1px solid var(--border-light)}
+.section-label{font-family:'IBM Plex Mono',monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);margin-bottom:1rem}
+
+.about p{font-size:.95rem;color:var(--text-soft);line-height:1.75;margin-bottom:.85rem}
+.about p strong{color:var(--text);font-weight:600}
+.about-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
+.about-tag{background:var(--tag-bg);color:var(--tag-text);padding:.25rem .7rem;border-radius:6px;font-size:.76rem;font-weight:500}
+
+.tl-item{padding:.85rem 0;border-bottom:1px solid var(--border-light)}
+.tl-item:last-child{border-bottom:none}
+.tl-top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.tl-role{font-weight:600;font-size:.95rem}
+.tl-date{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--text-muted);white-space:nowrap}
+.tl-desc{font-size:.88rem;color:var(--text-soft);margin-top:.15rem}
+.tl-desc a{color:var(--text-soft);text-decoration:none;border-bottom:1px solid var(--border);transition:all .2s}
+.tl-desc a:hover{color:var(--text);border-color:var(--text)}
+
+.misc-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.misc-item{background:var(--surface);border:1px solid var(--border-light);border-radius:12px;padding:1.15rem;transition:all .2s}
+.misc-item:hover{border-color:var(--border);transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,.03)}
+.misc-item h4{font-size:.88rem;font-weight:600;margin-bottom:.15rem}
+.misc-item .misc-sub{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--text-muted);margin-bottom:.3rem}
+.misc-item p{font-size:.82rem;color:var(--text-soft);line-height:1.55}
+
+.ec-list{list-style:none;padding:0}
+.ec-list li{padding:.55rem 0;border-bottom:1px solid var(--border-light);font-size:.9rem}
+.ec-list li:last-child{border-bottom:none}
+.ec-role{font-weight:600}
+.ec-org{color:var(--text-soft)}
+.ec-note{font-size:.82rem;color:var(--text-muted)}
+
+.consuming-list{list-style:none;padding:0}
+.consuming-list li{font-size:.88rem;color:var(--text-soft);padding:.3rem 0}
+.consuming-list li em{font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--text-muted);margin-right:.4rem}
+.consuming-list li a{color:var(--text-soft);text-decoration:none;border-bottom:1px solid var(--border);transition:all .2s}
+.consuming-list li a:hover{color:var(--text);border-color:var(--text)}
+
+.interests-row{display:flex;flex-wrap:wrap;gap:.4rem}
+.interest-tag{background:var(--surface);border:1px solid var(--border-light);padding:.4rem .9rem;border-radius:100px;font-size:.82rem;color:var(--text-soft);transition:all .2s}
+.interest-tag:hover{border-color:var(--border);color:var(--text)}
+
+.contact-row{display:flex;gap:.5rem;flex-wrap:wrap}
+.contact-link{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.1rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--text-soft);text-decoration:none;font-size:.85rem;font-weight:500;transition:all .2s}
+.contact-link:hover{border-color:var(--text-muted);color:var(--text);transform:translateY(-1px)}
+.contact-link svg{width:15px;height:15px}
+
+footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-light);text-align:center;font-size:.75rem;color:var(--text-muted);padding-bottom:2rem}
+.terminal-hint{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--text-muted);opacity:.5;margin-top:.5rem;cursor:pointer;transition:opacity .2s}
+.terminal-hint:hover{opacity:.8}
+
+.terminal-overlay{display:none;position:fixed;bottom:0;left:0;right:0;z-index:500;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);height:100vh;align-items:flex-end;justify-content:center}
+.terminal-overlay.open{display:flex}
+.terminal-box{width:100%;max-width:600px;background:#1a1a1c;border-radius:12px 12px 0 0;padding:1.25rem 1.5rem;max-height:50vh;overflow-y:auto;font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:#e0e0e0}
+.t-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;color:#6b6b6b;font-size:.7rem}
+.t-close{cursor:pointer;color:#6b6b6b;transition:color .2s;background:none;border:none;font-family:inherit;font-size:.8rem}
+.t-close:hover{color:#e0e0e0}
+.t-output{margin-bottom:.75rem;line-height:1.6}
+.t-output .t-cmd{color:#4ade80}
+.t-output .t-res{color:#b0b0b5}
+.t-input-row{display:flex;align-items:center;gap:.5rem}
+.t-prompt{color:#4ade80}
+.t-input{background:none;border:none;color:#e0e0e0;font-family:'IBM Plex Mono',monospace;font-size:.8rem;flex:1;outline:none;caret-color:#4ade80}
+
+.fade-in{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.s1{transition-delay:.05s}.s2{transition-delay:.1s}.s3{transition-delay:.15s}.s4{transition-delay:.2s}
+
+@media(max-width:900px){.side-links,.nav-dots{display:none}}
+@media(max-width:600px){.page-wrap{padding:3.5rem 1.25rem 3rem}.misc-grid{grid-template-columns:1fr}.tl-top{flex-direction:column;gap:.1rem}}
+</style>
+</head>
+<body>
+
+<div class="theme-toggle" onclick="toggleTheme()">&#9790;</div>
+
+<div class="side-links">
+  <a href="mailto:jaleo@usc.edu" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></a>
+  <a href="https://linkedin.com/in/josephleo05" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.064 2.064 0 110-4.128 2.064 2.064 0 010 4.128zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+  <a href="https://github.com/jleo28" target="_blank" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+  <a href="tel:+13236831705" title="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></a>
+</div>
+
+<div class="nav-dots" id="navDots"></div>
+
+<div class="page-wrap">
+
+  <div class="hero" data-section="top">
+    <div class="hero-label fade-in"><span class="dot"></span> actively looking for <span class="label-tag year">2026</span> <span class="label-tag summer">summer</span> / <span class="label-tag fall">fall</span> internships!</div>
+    <p class="hero-greeting fade-in s1" id="greeting"></p>
+    <p class="hero-tagline fade-in s2" id="tagline"></p>
+    <h1 class="fade-in s3">I build <em id="cycleWord">intelligent</em> products at the intersection of engineering &amp; business.</h1>
+    <p class="hero-blurb fade-in s4">CS + Business Administration @ <a href="https://usc.edu/" target="_blank">USC</a>. Three internships shipping AI/ML systems, data pipelines, and production tools. I love work where you can trace a line from the code to the impact.</p>
+    <p class="hero-location fade-in s4">Based in LA's Koreatown for now...</p>
+  </div>
+
+  <div class="section fade-in" data-section="about">
+    <div class="section-label">about me</div>
+    <div class="about">
+      <p>Hi! I'm a rising junior at <a href="https://usc.edu/" target="_blank">USC</a> pursuing a dual degree in <strong>Computer Science</strong> and <strong>Business Administration</strong>, with minors in AI Applications and Business Finance.</p>
+      <p>I gravitate toward the messy middle between engineering and business, the kind of work where understanding the user matters as much as writing the code. I've built production chatbots, financial NLP pipelines, and internal tools across teams spanning three continents.</p>
+    </div>
+  </div>
+
+  <div class="section fade-in" data-section="skills">
+    <div class="section-label">skills</div>
+    <div class="about-tags">
+      <span class="about-tag">Python</span><span class="about-tag">C++</span><span class="about-tag">Java</span><span class="about-tag">JavaScript</span><span class="about-tag">Swift</span><span class="about-tag">HTML/CSS</span><span class="about-tag">PyTorch</span><span class="about-tag">TensorFlow</span><span class="about-tag">Scikit-Learn</span><span class="about-tag">LangChain</span><span class="about-tag">Google Vertex AI</span><span class="about-tag">Docker</span><span class="about-tag">MySQL</span><span class="about-tag">Tableau</span><span class="about-tag">Power BI</span><span class="about-tag">Excel</span><span class="about-tag">Matplotlib</span><span class="about-tag">R</span>
+    </div>
+  </div>
+
+  <div class="section fade-in" data-section="languages">
+    <div class="section-label">languages</div>
+    <div class="about-tags">
+      <span class="about-tag">English (native)</span><span class="about-tag">Indonesian (native)</span><span class="about-tag">Japanese (native)</span><span class="about-tag">Mandarin (professional)</span>
+    </div>
+  </div>
+
+  <div class="section fade-in" data-section="currently">
+    <div class="section-label">currently</div>
+    <div class="tl-item">
+      <div class="tl-top"><div class="tl-role">Digital Systems Student Worker Manager</div><div class="tl-date">Feb 2025 &#8211; Present</div></div>
+      <div class="tl-desc"><a href="https://mann.usc.edu" target="_blank">USC Mann School of Pharmacy DHBB</a> &#8212; leading a team of 6, building geo-tracking attendance systems, coordinating 15+ events/semester</div>
+    </div>
+  </div>
+
+  <div class="section fade-in" data-section="previously">
+    <div class="section-label">previously</div>
+    <div class="tl-item"><div class="tl-top"><div class="tl-role">Gen. AI Engineer Intern</div><div class="tl-date">May &#8211; Aug 2025</div></div><div class="tl-desc"><a href="https://swingphi.com" target="_blank">Swing Phi</a> &#8212; end-to-end news sentiment pipeline (BERT, FinBERT, Claude LLM), 100+ daily articles, 85% event correlation accuracy</div></div>
+    <div class="tl-item"><div class="tl-top"><div class="tl-role">AI/ML Systems Engineer Intern</div><div class="tl-date">May &#8211; Aug 2024</div></div><div class="tl-desc"><a href="https://nttdata.com" target="_blank">NTT Data Inc.</a> &#8212; production RAG chatbot on Google Vertex AI, 30% reduction in manual reporting, cross-regional (Spain, APAC, NA)</div></div>
+    <div class="tl-item"><div class="tl-top"><div class="tl-role">Dashboard &amp; Analytics Intern</div><div class="tl-date">May &#8211; Jul 2023</div></div><div class="tl-desc"><a href="https://idntimes.com" target="_blank">IDN Media</a> &#8212; Tableau dashboards from MySQL data, boosted Unilever Clear&#174; ad engagement by 45%</div></div>
+    <div class="tl-item"><div class="tl-top"><div class="tl-role">Research Assistant</div><div class="tl-date">Aug 2022 &#8211; May 2023</div></div><div class="tl-desc"><a href="https://trisakti.ac.id/en/home-2/" target="_blank">Trisakti University</a> &#8212; consumer segmentation data-mining for Domino&#8217;s Pizza (Na&#239;ve Bayes, Matplotlib, R)</div></div>
+  </div>
+
+  <div class="section fade-in" data-section="projects">
+    <div class="section-label">projects</div>
+    <div class="tl-item"><div class="tl-top"><div class="tl-role">Pok&#233;dex++</div></div><div class="tl-desc">Full-stack Flask web app with interactive dashboards, ML-powered stat prediction (Linear Regression, Random Forest), and CSV persistence &#8212; <a href="https://github.com/jleo28/AppliedPythonFinalProject" target="_blank">GitHub</a></div></div>
+    <div class="tl-item"><div class="tl-top"><div class="tl-role">TrailFinder</div></div><div class="tl-desc">Social hiking platform with friends system, activity feeds, and JWT auth (Java, MySQL, React) &#8212; <a href="https://github.com/malachide2/CSCI201-Final-Project-Backend" target="_blank">GitHub</a></div></div>
+  </div>
+
+  <div class="section fade-in" data-section="honors">
+    <div class="section-label">honor(-able mention)s</div>
+    <div class="misc-grid">
+      <div class="misc-item"><h4>J&amp;J Case Competition</h4><div class="misc-sub">2nd Place &#8211; Silver</div><p>Represented Team USC at the national level against 11 schools</p></div>
+      <div class="misc-item"><h4>Hackathon+ (Avenues Consulting)</h4><div class="misc-sub">1st Place &#8211; Gold</div><p>Pitched TheraPioneer, an AI-driven therapist assistant platform</p></div>
+      <div class="misc-item"><h4>GCSC Pitch Competition</h4><div class="misc-sub">Semifinalist</div><p>Pitched GurU, a student-faculty research matching platform</p></div>
+      <div class="misc-item"><h4>The Wharton School &#8211; LBW</h4><div class="misc-sub">Full Merit-based Scholarship Recipient</div><p>1 of 10 full rides to the Leadership in the Business World Summer Program</p></div>
+      <div class="misc-item"><h4>Dean&#8217;s List (5&#215;)</h4><div class="misc-sub">Recipient</div><p>GPA &#8805; 3.5</p></div>
+    </div>
+  </div>
+
+  <div class="section fade-in" data-section="extracurriculars">
+    <div class="section-label">beyond the classroom</div>
+    <ul class="ec-list">
+      <li><span class="ec-role">Project Manager</span> <span class="ec-org">&#8212; Core Consulting Club (CCG)</span><br><span class="ec-note">Led 5 consultants for Ohana Subleasing Co. ($11.5M raised, $20M+ earned by hosts, backed by Zillow co-founder &amp; ex-Airbnb execs)</span></li>
+      <li><span class="ec-role">Business Analyst</span> <span class="ec-org">&#8212; Avenues Consulting Group (ACG)</span><br><span class="ec-note">For CodeNinjas</span></li>
+      <li><span class="ec-role">Co-Chair of Assembly Operations</span> <span class="ec-org">&#8212; International Students&#8217; Assembly (ISA)</span></li>
+      <li><span class="ec-role">Chair of Finance</span> <span class="ec-org">&#8212; Association of Indonesian Students at USC (ASIS)</span></li>
+      <li><span class="ec-role">Chair of Finance</span> <span class="ec-org">&#8212; USC Grand Challenge Scholars&#8217; Program (GCSP)</span></li>
+      <li><span class="ec-role">Educational Consultant</span> <span class="ec-org">&#8212; AcceptED</span></li>
+    </ul>
+  </div>
+
+  <div class="section fade-in" data-section="consuming">
+    <div class="section-label">currently consuming</div>
+    <ul class="consuming-list">
+      <li><em>listening to:</em> <a href="https://open.spotify.com/track/4x7z7PwjRpbtFNKXihsHRr" target="_blank">Luv (sic) pt6 Uyama Hiroto Remix &#8212; Nujabes, Uyama Hiroto</a></li>
+      <li><em>watching:</em> A Knight of the Seven Kingdoms S1</li>
+    </ul>
+  </div>
+
+  <div class="section fade-in" data-section="littlethings">
+    <div class="section-label">the little things</div>
+    <div class="interests-row">
+      <span class="interest-tag">&#127934; tennis</span><span class="interest-tag">&#127952; volleyball</span><span class="interest-tag">&#127830; food crawls</span><span class="interest-tag">&#127861; matcha (ceremonial)</span><span class="interest-tag">&#9749; sand-brewed coffee</span><span class="interest-tag">&#127918; couch multiplayer</span><span class="interest-tag">&#128054; dog-walks</span><span class="interest-tag">&#128663; night drives</span><span class="interest-tag">&#127925; jazz piano</span><span class="interest-tag">&#127910; movie runs</span><span class="interest-tag">&#127922; board game nights</span>
+    </div>
+  </div>
+
+  <div class="section fade-in" data-section="contact">
+    <div class="section-label">contact</div>
+    <div class="contact-row">
+      <a href="mailto:jaleo@usc.edu" class="contact-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>jaleo@usc.edu</a>
+      <a href="tel:+13236831705" class="contact-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(323) 683-1705</a>
+      <a href="https://linkedin.com/in/josephleo05" target="_blank" class="contact-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.064 2.064 0 110-4.128 2.064 2.064 0 010 4.128zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+      <a href="https://github.com/jleo28" target="_blank" class="contact-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
+    </div>
+  </div>
+
+  <footer>&#169; 2026 Joseph Leo &#183; built with purpose and 200mg caffeine doses &#9889;<div class="terminal-hint" onclick="openTerminal()">press / to open terminal</div></footer>
+</div>
+
+<div class="terminal-overlay" id="terminal" onclick="if(event.target===this)closeTerminal()">
+  <div class="terminal-box">
+    <div class="t-header"><span>joe@portfolio ~ %</span><button class="t-close" onclick="closeTerminal()">&#10005; esc</button></div>
+    <div id="t-log"><div class="t-output"><span class="t-res">welcome! type <span style="color:#4ade80">help</span> to see available commands.</span></div></div>
+    <div class="t-input-row"><span class="t-prompt">&#10095;</span><input class="t-input" id="t-input" type="text" autocomplete="off" spellcheck="false"></div>
+  </div>
+</div>
+
+<script>
+// TIME GREETING
+(function(){
+  var h=new Date().getHours(),g;
+  if(h>=5&&h<12)g="Morning! I'm Joe \u{1F44B}";
+  else if(h>=12&&h<17)g="Afternoon! I'm Joe \u{1F44B}";
+  else if(h>=17&&h<21)g="Evening! I'm Joe \u{1F44B}";
+  else g="Fellow night owl, I'm Joe \u{1F44B}";
+  document.getElementById('greeting').textContent=g;
+})();
+
+// ROTATING TAGLINE
+(function(){
+  var lines=[
+    "currently fueled by ceremonial matcha \u{1F375}",
+    "probably mid-volley somewhere in LA",
+    "sand-brewed coffee evangelist \u2615",
+    "night drive with no destination type",
+    "couch co-op > online multiplayer, always \u{1F3AE}",
+    "walking someone's dog right now, probably \u{1F436}",
+    "food crawl planner in a past life \u{1F356}",
+    "jazz piano hours \u{1F3B5}",
+    "board game night instigator \u{1F3B2}",
+    "will leave a movie theater at 1am with no regrets \u{1F3AC}",
+    "tennis forehand: a work in progress \u{1F3BE}"
+  ];
+  document.getElementById('tagline').textContent=lines[Math.floor(Math.random()*lines.length)];
+})();
+
+// CYCLING HEADLINE WORD
+(function(){
+  var words=["intelligent","useful","thoughtful","intentional","purposeful"];
+  var el=document.getElementById('cycleWord');
+  var i=0;
+  setInterval(function(){
+    el.style.opacity='0';
+    el.style.transform='translateY(-6px)';
+    setTimeout(function(){
+      i=(i+1)%words.length;
+      el.textContent=words[i];
+      el.style.transform='translateY(6px)';
+      requestAnimationFrame(function(){
+        el.style.opacity='1';
+        el.style.transform='translateY(0)';
+      });
+    },300);
+  },3000);
+  el.style.transition='opacity .3s ease, transform .3s ease';
+})();
+
+// DARK MODE
+function toggleTheme(){
+  var d=document.documentElement;
+  var isDark=d.getAttribute('data-theme')==='dark';
+  d.setAttribute('data-theme',isDark?'':'dark');
+  document.querySelector('.theme-toggle').textContent=isDark?'\u263E':'\u2600';
+}
+
+// FADE IN
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el);});
+
+// NAV DOTS
+(function(){
+  var sections=document.querySelectorAll('[data-section]');
+  var dc=document.getElementById('navDots');
+  var labelMap={top:'top',about:'about me',skills:'skills',languages:'languages',currently:'currently',previously:'previously',projects:'projects',honors:'honors',extracurriculars:'beyond the classroom',consuming:'currently consuming',littlethings:'the little things',contact:'contact'};
+  sections.forEach(function(s){
+    var dot=document.createElement('button');
+    dot.className='nav-dot';
+    dot.setAttribute('data-label',labelMap[s.dataset.section]||s.dataset.section);
+    dot.onclick=function(){s.scrollIntoView({behavior:'smooth',block:'start'});};
+    dc.appendChild(dot);
+  });
+  var dots=dc.querySelectorAll('.nav-dot');
+  var so=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var idx=Array.from(sections).indexOf(e.target);
+        dots.forEach(function(d,i){d.classList.toggle('active',i===idx);});
+      }
+    });
+  },{threshold:0.3});
+  sections.forEach(function(s){so.observe(s);});
+})();
+
+// TERMINAL
+function openTerminal(){document.getElementById('terminal').classList.add('open');document.getElementById('t-input').focus();}
+function closeTerminal(){document.getElementById('terminal').classList.remove('open');}
+document.addEventListener('keydown',function(e){
+  if(e.key==='/'&&!document.getElementById('terminal').classList.contains('open')){e.preventDefault();openTerminal();}
+  if(e.key==='Escape')closeTerminal();
+});
+document.getElementById('t-input').addEventListener('keydown',function(e){
+  if(e.key!=='Enter')return;
+  var cmd=this.value.trim().toLowerCase();
+  if(!cmd)return;
+  this.value='';
+  var log=document.getElementById('t-log');
+  var res;
+  if(cmd==='help')res="available commands: about, skills, languages, coffee, matcha, music, contact, night, clear, exit";
+  else if(cmd==='about')res="CS + Business @ USC. I like building things that matter. three internships deep and counting.";
+  else if(cmd==='skills')res="Python, C++, Java, JS, Swift, PyTorch, TensorFlow, Scikit-Learn, LangChain, Vertex AI, Docker, MySQL, Tableau, Power BI, R";
+  else if(cmd==='languages')res="English, Indonesian, Japanese, Mandarin \u2014 and Python.";
+  else if(cmd==='coffee')res="Sand-brewed > pour-over > espresso. Don't @ me. \u2615";
+  else if(cmd==='matcha')res="Ceremonial only. If it's culinary grade, I'm not interested. \u{1F375}";
+  else if(cmd==='music')res="on repeat: Luv (sic) pt6 Uyama Hiroto Remix \u2014 Nujabes, Uyama Hiroto \u{1F3B5}";
+  else if(cmd==='contact')res="jaleo@usc.edu | linkedin.com/in/josephleo05 | github.com/jleo28";
+  else if(cmd==='night'){toggleTheme();res="toggled. \u{1F30C}";}
+  else if(cmd==='clear'){log.innerHTML='<div class="t-output"><span class="t-res">cleared.</span></div>';return;}
+  else if(cmd==='exit'){closeTerminal();return;}
+  else res="command not found. try 'help'";
+  log.innerHTML+='<div class="t-output"><span class="t-cmd">&gt; '+cmd+'</span><br><span class="t-res">'+res+'</span></div>';
+  log.parentElement.scrollTop=log.parentElement.scrollHeight;
+});
+</script>
+</body>
+</html>
