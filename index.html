@@ -66,6 +66,9 @@ a{color:var(--text)}
 .about-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.75rem}
 .about-tag{background:var(--tag-bg);color:var(--tag-text);padding:.25rem .7rem;border-radius:6px;font-size:.76rem;font-weight:500}
 
+.tl-logo{width:26px;height:26px;border-radius:6px;object-fit:contain;background:var(--surface);border:1px solid var(--border-light);flex-shrink:0;vertical-align:middle}
+.tl-top-inner{display:flex;align-items:center;gap:.55rem;flex:1;min-width:0}
+.misc-logo{width:22px;height:22px;border-radius:5px;object-fit:contain;display:block;margin-bottom:.35rem}
 .tl-item{padding:.85rem 0;border-bottom:1px solid var(--border-light)}
 .tl-item:last-child{border-bottom:none}
 .tl-top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
@@ -134,10 +137,10 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-ligh
 <div class="theme-toggle" onclick="toggleTheme()">&#9790;</div>
 
 <div class="side-links">
-  <a href="mailto:jaleo@usc.edu" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></a>
+  <a href="/cdn-cgi/l/email-protection#eb818a878e84ab9e9888c58e8f9e" title="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg></a>
   <a href="https://linkedin.com/in/josephleo05" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.064 2.064 0 110-4.128 2.064 2.064 0 010 4.128zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
   <a href="https://github.com/jleo28" target="_blank" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
-  <a href="tel:+13236831705" title="Phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></a>
+  <a href="https://x.com/josephandrewleo" target="_blank" title="X / Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg></a>
 </div>
 
 <div class="nav-dots" id="navDots"></div>
@@ -149,15 +152,13 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-ligh
     <p class="hero-greeting fade-in s1" id="greeting"></p>
     <p class="hero-tagline fade-in s2" id="tagline"></p>
     <h1 class="fade-in s3">I build <em id="cycleWord">intelligent</em> products at the intersection of engineering &amp; business.</h1>
-    <p class="hero-blurb fade-in s4">CS + Business Administration @ <a href="https://usc.edu/" target="_blank">USC</a>. Three internships shipping AI/ML systems, data pipelines, and production tools. I love work where you can trace a line from the code to the impact.</p>
     <p class="hero-location fade-in s4">Based in LA's Koreatown for now...</p>
   </div>
 
   <div class="section fade-in" data-section="about">
     <div class="section-label">about me</div>
     <div class="about">
-      <p>Hi! I'm a rising junior at <a href="https://usc.edu/" target="_blank">USC</a> pursuing a dual degree in <strong>Computer Science</strong> and <strong>Business Administration</strong>, with minors in AI Applications and Business Finance.</p>
-      <p>I gravitate toward the messy middle between engineering and business, the kind of work where understanding the user matters as much as writing the code. I've built production chatbots, financial NLP pipelines, and internal tools across teams spanning three continents.</p>
+      <p>CS + Business Administration @ <a href="https://usc.edu/" target="_blank">USC</a>. Three internships shipping production chatbots, financial NLP pipelines, and internal tools across teams spanning three continents. I gravitate towards the messy middle between engineering and business and love work where you can trace a line from the code to the impact.</p>
     </div>
   </div>
 
@@ -178,17 +179,17 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-ligh
   <div class="section fade-in" data-section="currently">
     <div class="section-label">currently</div>
     <div class="tl-item">
-      <div class="tl-top"><div class="tl-role">Digital Systems Student Worker Manager</div><div class="tl-date">Feb 2025 &#8211; Present</div></div>
+      <div class="tl-top"><div class="tl-top-inner"><img class="tl-logo" src="https://logo.clearbit.com/usc.edu" alt="" onerror="this.style.display='none'"><div class="tl-role">Digital Systems Student Worker Manager</div></div><div class="tl-date">Feb 2025 &#8211; Present</div></div>
       <div class="tl-desc"><a href="https://mann.usc.edu" target="_blank">USC Mann School of Pharmacy DHBB</a> &#8212; leading a team of 6, building geo-tracking attendance systems, coordinating 15+ events/semester</div>
     </div>
   </div>
 
   <div class="section fade-in" data-section="previously">
     <div class="section-label">previously</div>
-    <div class="tl-item"><div class="tl-top"><div class="tl-role">Gen. AI Engineer Intern</div><div class="tl-date">May &#8211; Aug 2025</div></div><div class="tl-desc"><a href="https://swingphi.com" target="_blank">Swing Phi</a> &#8212; end-to-end news sentiment pipeline (BERT, FinBERT, Claude LLM), 100+ daily articles, 85% event correlation accuracy</div></div>
-    <div class="tl-item"><div class="tl-top"><div class="tl-role">AI/ML Systems Engineer Intern</div><div class="tl-date">May &#8211; Aug 2024</div></div><div class="tl-desc"><a href="https://nttdata.com" target="_blank">NTT Data Inc.</a> &#8212; production RAG chatbot on Google Vertex AI, 30% reduction in manual reporting, cross-regional (Spain, APAC, NA)</div></div>
-    <div class="tl-item"><div class="tl-top"><div class="tl-role">Dashboard &amp; Analytics Intern</div><div class="tl-date">May &#8211; Jul 2023</div></div><div class="tl-desc"><a href="https://idntimes.com" target="_blank">IDN Media</a> &#8212; Tableau dashboards from MySQL data, boosted Unilever Clear&#174; ad engagement by 45%</div></div>
-    <div class="tl-item"><div class="tl-top"><div class="tl-role">Research Assistant</div><div class="tl-date">Aug 2022 &#8211; May 2023</div></div><div class="tl-desc"><a href="https://trisakti.ac.id/en/home-2/" target="_blank">Trisakti University</a> &#8212; consumer segmentation data-mining for Domino&#8217;s Pizza (Na&#239;ve Bayes, Matplotlib, R)</div></div>
+    <div class="tl-item"><div class="tl-top"><div class="tl-top-inner"><img class="tl-logo" src="https://logo.clearbit.com/swingphi.com" alt="" onerror="this.style.display='none'"><div class="tl-role">Gen. AI Engineer Intern</div></div><div class="tl-date">May &#8211; Aug 2025</div></div><div class="tl-desc"><a href="https://swingphi.com" target="_blank">Swing Phi</a> &#8212; end-to-end news sentiment pipeline (BERT, FinBERT, Claude LLM), 100+ daily articles, 85% event correlation accuracy</div></div>
+    <div class="tl-item"><div class="tl-top"><div class="tl-top-inner"><img class="tl-logo" src="https://logo.clearbit.com/nttdata.com" alt="" onerror="this.style.display='none'"><div class="tl-role">AI/ML Systems Engineer Intern</div></div><div class="tl-date">May &#8211; Aug 2024</div></div><div class="tl-desc"><a href="https://nttdata.com" target="_blank">NTT Data Inc.</a> &#8212; production RAG chatbot on Google Vertex AI, 30% reduction in manual reporting, cross-regional (Spain, APAC, NA)</div></div>
+    <div class="tl-item"><div class="tl-top"><div class="tl-top-inner"><img class="tl-logo" src="https://logo.clearbit.com/idntimes.com" alt="" onerror="this.style.display='none'"><div class="tl-role">Dashboard &amp; Analytics Intern</div></div><div class="tl-date">May &#8211; Jul 2023</div></div><div class="tl-desc"><a href="https://idntimes.com" target="_blank">IDN Media</a> &#8212; Tableau dashboards from MySQL data, boosted Unilever Clear&#174; ad engagement by 45%</div></div>
+    <div class="tl-item"><div class="tl-top"><div class="tl-top-inner"><img class="tl-logo" src="https://logo.clearbit.com/trisakti.ac.id" alt="" onerror="this.style.display='none'"><div class="tl-role">Research Assistant</div></div><div class="tl-date">Aug 2022 &#8211; May 2023</div></div><div class="tl-desc"><a href="https://trisakti.ac.id/en/home-2/" target="_blank">Trisakti University</a> &#8212; consumer segmentation data-mining for Domino&#8217;s Pizza (Na&#239;ve Bayes, Matplotlib, R)</div></div>
   </div>
 
   <div class="section fade-in" data-section="projects">
@@ -200,11 +201,11 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-ligh
   <div class="section fade-in" data-section="honors">
     <div class="section-label">honor(-able mention)s</div>
     <div class="misc-grid">
-      <div class="misc-item"><h4>J&amp;J Case Competition</h4><div class="misc-sub">2nd Place &#8211; Silver</div><p>Represented Team USC at the national level against 11 schools</p></div>
-      <div class="misc-item"><h4>Hackathon+ (Avenues Consulting)</h4><div class="misc-sub">1st Place &#8211; Gold</div><p>Pitched TheraPioneer, an AI-driven therapist assistant platform</p></div>
-      <div class="misc-item"><h4>GCSC Pitch Competition</h4><div class="misc-sub">Semifinalist</div><p>Pitched GurU, a student-faculty research matching platform</p></div>
-      <div class="misc-item"><h4>The Wharton School &#8211; LBW</h4><div class="misc-sub">Full Merit-based Scholarship Recipient</div><p>1 of 10 full rides to the Leadership in the Business World Summer Program</p></div>
-      <div class="misc-item"><h4>Dean&#8217;s List (5&#215;)</h4><div class="misc-sub">Recipient</div><p>GPA &#8805; 3.5</p></div>
+      <div class="misc-item"><img class="misc-logo" src="https://logo.clearbit.com/jnj.com" alt="" onerror="this.style.display='none'"><h4>J&amp;J Case Competition</h4><div class="misc-sub">2nd Place &#8211; Silver</div><p>Represented Team USC at the national level against 11 schools</p></div>
+      <div class="misc-item"><img class="misc-logo" src="https://logo.clearbit.com/avenuesconsulting.com" alt="" onerror="this.style.display='none'"><h4>Hackathon+ (Avenues Consulting)</h4><div class="misc-sub">1st Place &#8211; Gold</div><p>Pitched TheraPioneer, an AI-driven therapist assistant platform</p></div>
+      <div class="misc-item"><img class="misc-logo" src="https://logo.clearbit.com/usc.edu" alt="" onerror="this.style.display='none'"><h4>GCSC Pitch Competition</h4><div class="misc-sub">Semifinalist</div><p>Pitched GurU, a student-faculty research matching platform</p></div>
+      <div class="misc-item"><img class="misc-logo" src="https://logo.clearbit.com/wharton.upenn.edu" alt="" onerror="this.style.display='none'"><h4>The Wharton School &#8211; LBW</h4><div class="misc-sub">Full Merit-based Scholarship Recipient</div><p>1 of 10 full rides to the Leadership in the Business World Summer Program</p></div>
+      <div class="misc-item"><img class="misc-logo" src="https://logo.clearbit.com/usc.edu" alt="" onerror="this.style.display='none'"><h4>Dean&#8217;s List (5&#215;)</h4><div class="misc-sub">Recipient</div><p>GPA &#8805; 3.5</p></div>
     </div>
   </div>
 
@@ -238,8 +239,8 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-ligh
   <div class="section fade-in" data-section="contact">
     <div class="section-label">contact</div>
     <div class="contact-row">
-      <a href="mailto:jaleo@usc.edu" class="contact-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>jaleo@usc.edu</a>
-      <a href="tel:+13236831705" class="contact-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>(323) 683-1705</a>
+      <a href="/cdn-cgi/l/email-protection#d4beb5b8b1bb94a1a7b7fab1b0a1" class="contact-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg><span class="__cf_email__" data-cfemail="d1bbb0bdb4be91a4a2b2ffb4b5a4">[email&#160;protected]</span></a>
+      <a href="https://x.com/josephandrewleo" target="_blank" class="contact-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>@josephandrewleo</a>
       <a href="https://linkedin.com/in/josephleo05" target="_blank" class="contact-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.064 2.064 0 110-4.128 2.064 2.064 0 010 4.128zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
       <a href="https://github.com/jleo28" target="_blank" class="contact-link"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>GitHub</a>
     </div>
@@ -256,7 +257,7 @@ footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border-ligh
   </div>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // TIME GREETING
 (function(){
   var h=new Date().getHours(),g;
@@ -369,10 +370,3 @@ document.getElementById('t-input').addEventListener('keydown',function(e){
   else if(cmd==='night'){toggleTheme();res="toggled. \u{1F30C}";}
   else if(cmd==='clear'){log.innerHTML='<div class="t-output"><span class="t-res">cleared.</span></div>';return;}
   else if(cmd==='exit'){closeTerminal();return;}
-  else res="command not found. try 'help'";
-  log.innerHTML+='<div class="t-output"><span class="t-cmd">&gt; '+cmd+'</span><br><span class="t-res">'+res+'</span></div>';
-  log.parentElement.scrollTop=log.parentElement.scrollHeight;
-});
-</script>
-</body>
-</html>
