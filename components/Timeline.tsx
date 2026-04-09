@@ -1,4 +1,6 @@
 // components/Timeline.tsx
+"use client";
+
 import { TimelineEntry } from "@/lib/data";
 import FadeIn from "./FadeIn";
 

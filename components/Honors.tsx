@@ -1,4 +1,6 @@
 // components/Honors.tsx
+"use client";
+
 import { honors } from "@/lib/data";
 import FadeIn from "./FadeIn";
 
