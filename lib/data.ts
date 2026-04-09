@@ -188,7 +188,7 @@ export const honors: HonorEntry[] = [
     description:
       "1 of 10 full rides to the Leadership in the Business World Summer Program",
     logoUrl:
-      "https://www.google.com/s2/favicons?domain=wharton.upenn.edu&sz=128",
+      "https://www.google.com/s2/favicons?domain=upenn.edu&sz=128",
   },
   {
     title: "Dean\u2019s List (5\u00D7)",
