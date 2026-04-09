@@ -17,6 +17,7 @@ export const socialLinks = {
   linkedin: "https://linkedin.com/in/josephleo05",
   github: "https://github.com/jleo28",
   twitter: "https://x.com/josephandrewleo",
+  resume: "/Joseph_Leo_Resume.pdf",
 };
 
 export const taglines = [
