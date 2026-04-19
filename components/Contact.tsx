@@ -2,9 +2,9 @@
 import { socialLinks } from "@/lib/data";
 import FadeIn from "./FadeIn";
 
-export default function Contact() {
+export default function Contact({ stagger }: { stagger?: number }) {
   return (
-    <FadeIn id="contact" className="section">
+    <FadeIn id="contact" className="section" stagger={stagger}>
       <div className="section-label">contact</div>
       <div className="contact-row">
         <a href={socialLinks.resume} target="_blank" rel="noopener noreferrer" className="contact-link">

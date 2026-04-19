@@ -3,9 +3,12 @@
 
 import { useFadeIn } from "@/lib/hooks";
 
+const STAGGER_BASE = 100;
+const STAGGER_STEP = 120;
+
 interface FadeInProps {
   children: React.ReactNode;
-  delay?: number;
+  stagger?: number;
   className?: string;
   id?: string;
   as?: "div" | "section";
@@ -13,18 +16,18 @@ interface FadeInProps {
 
 export default function FadeIn({
   children,
-  delay = 0,
+  stagger,
   className = "",
   id,
   as: Tag = "div",
 }: FadeInProps) {
-  const { ref, visible } = useFadeIn();
+  const mountDelay = stagger !== undefined ? STAGGER_BASE + stagger * STAGGER_STEP : undefined;
+  const { ref, visible } = useFadeIn(0.1, mountDelay);
   return (
     <Tag
       ref={ref}
       id={id}
       className={`fade-in ${visible ? "visible" : ""} ${className}`}
-      style={{ transitionDelay: `${delay}s` }}
     >
       {children}
     </Tag>

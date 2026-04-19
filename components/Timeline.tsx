@@ -8,11 +8,12 @@ interface TimelineProps {
   id: string;
   label: string;
   entries: TimelineEntry[];
+  stagger?: number;
 }
 
-export default function Timeline({ id, label, entries }: TimelineProps) {
+export default function Timeline({ id, label, entries, stagger }: TimelineProps) {
   return (
-    <FadeIn id={id} className="section">
+    <FadeIn id={id} className="section" stagger={stagger}>
       <div className="section-label">{label}</div>
       {entries.map((entry, i) => (
         <div className="tl-item" key={i}>

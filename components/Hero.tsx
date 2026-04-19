@@ -12,7 +12,7 @@ export default function Hero() {
 
   return (
     <div className="hero" id="top">
-      <FadeIn>
+      <FadeIn stagger={0}>
         <div className="hero-label">
           <span className="dot" />
           {" actively looking for "}
@@ -24,13 +24,13 @@ export default function Hero() {
           {" internships!"}
         </div>
       </FadeIn>
-      <FadeIn delay={0.05}>
+      <FadeIn stagger={1}>
         <p className="hero-greeting">{greeting}</p>
       </FadeIn>
-      <FadeIn delay={0.1}>
+      <FadeIn stagger={2}>
         <p className="hero-tagline">{tagline}</p>
       </FadeIn>
-      <FadeIn delay={0.15}>
+      <FadeIn stagger={3}>
         <h1>
           I build{" "}
           <em
@@ -41,7 +41,7 @@ export default function Hero() {
           products at the intersection of engineering &amp; business.
         </h1>
       </FadeIn>
-      <FadeIn delay={0.2}>
+      <FadeIn stagger={4}>
         <p className="hero-location">Based in LA&apos;s Koreatown for now...</p>
       </FadeIn>
     </div>

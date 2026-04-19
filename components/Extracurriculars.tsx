@@ -2,9 +2,9 @@
 import { extracurriculars } from "@/lib/data";
 import FadeIn from "./FadeIn";
 
-export default function Extracurriculars() {
+export default function Extracurriculars({ stagger }: { stagger?: number }) {
   return (
-    <FadeIn id="extracurriculars" className="section">
+    <FadeIn id="extracurriculars" className="section" stagger={stagger}>
       <div className="section-label">beyond the classroom</div>
       <ul className="ec-list">
         {extracurriculars.map((ec, i) => (

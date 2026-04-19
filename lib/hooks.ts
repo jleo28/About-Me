@@ -7,11 +7,15 @@ import { useEffect, useRef, useState, useCallback } from "react";
  * Hook that returns a ref and a boolean indicating
  * whether the element has scrolled into view.
  */
-export function useFadeIn(threshold = 0.1) {
+export function useFadeIn(threshold = 0.1, mountDelay?: number) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    if (mountDelay !== undefined) {
+      const t = setTimeout(() => setVisible(true), mountDelay);
+      return () => clearTimeout(t);
+    }
     const el = ref.current;
     if (!el) return;
     const obs = new IntersectionObserver(
@@ -25,7 +29,7 @@ export function useFadeIn(threshold = 0.1) {
     );
     obs.observe(el);
     return () => obs.disconnect();
-  }, [threshold]);
+  }, [threshold, mountDelay]);
 
   return { ref, visible };
 }

@@ -2,9 +2,9 @@
 import { projects } from "@/lib/data";
 import FadeIn from "./FadeIn";
 
-export default function Projects() {
+export default function Projects({ stagger }: { stagger?: number }) {
   return (
-    <FadeIn id="projects" className="section">
+    <FadeIn id="projects" className="section" stagger={stagger}>
       <div className="section-label">projects</div>
       {projects.map((p, i) => (
         <div className="tl-item" key={i}>

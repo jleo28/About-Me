@@ -24,17 +24,17 @@ export default function Home() {
 
       <div className="page-wrap">
         <Hero />
-        <About />
-        <TagCloud id="skills" label="skills" items={skills} />
-        <TagCloud id="languages" label="languages" items={languages} />
-        <Timeline id="currently" label="currently" entries={currentRoles} />
-        <Timeline id="previously" label="previously" entries={previousRoles} />
-        <Projects />
-        <Honors />
-        <Extracurriculars />
-        <Consuming />
-        <Interests />
-        <Contact />
+        <About stagger={5} />
+        <TagCloud id="skills" label="skills" items={skills} stagger={6} />
+        <TagCloud id="languages" label="languages" items={languages} stagger={7} />
+        <Timeline id="currently" label="currently" entries={currentRoles} stagger={8} />
+        <Timeline id="previously" label="previously" entries={previousRoles} stagger={9} />
+        <Projects stagger={10} />
+        <Honors stagger={11} />
+        <Extracurriculars stagger={12} />
+        <Consuming stagger={13} />
+        <Interests stagger={14} />
+        <Contact stagger={15} />
 
         <footer>
           &copy; 2026 Joseph Leo &middot; built with purpose and 200mg caffeine

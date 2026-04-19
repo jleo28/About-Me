@@ -4,9 +4,9 @@
 import { honors } from "@/lib/data";
 import FadeIn from "./FadeIn";
 
-export default function Honors() {
+export default function Honors({ stagger }: { stagger?: number }) {
   return (
-    <FadeIn id="honors" className="section">
+    <FadeIn id="honors" className="section" stagger={stagger}>
       <div className="section-label">honor(-able mention)s</div>
       <div className="misc-grid">
         {honors.map((h, i) => (
