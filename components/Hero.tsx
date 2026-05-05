@@ -13,24 +13,12 @@ export default function Hero() {
   return (
     <div className="hero" id="top">
       <FadeIn stagger={0}>
-        <div className="hero-label">
-          <span className="dot" />
-          {" actively looking for "}
-          <span className="label-tag year">2026</span>
-          {" "}
-          <span className="label-tag summer">summer</span>
-          {" / "}
-          <span className="label-tag fall">fall</span>
-          {" internships!"}
-        </div>
-      </FadeIn>
-      <FadeIn stagger={1}>
         <p className="hero-greeting">{greeting}</p>
       </FadeIn>
-      <FadeIn stagger={2}>
+      <FadeIn stagger={1}>
         <p className="hero-tagline">{tagline}</p>
       </FadeIn>
-      <FadeIn stagger={3}>
+      <FadeIn stagger={2}>
         <h1>
           I build{" "}
           <em
@@ -41,7 +29,7 @@ export default function Hero() {
           products at the intersection of engineering &amp; business.
         </h1>
       </FadeIn>
-      <FadeIn stagger={4}>
+      <FadeIn stagger={3}>
         <p className="hero-location">Based in LA&apos;s Koreatown for now...</p>
       </FadeIn>
     </div>

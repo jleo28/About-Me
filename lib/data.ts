@@ -29,7 +29,6 @@ export const taglines = [
   "walking someone's dog right now, probably \u{1F436}",
   "food crawl planner in a past life \u{1F356}",
   "jazz piano hours \u{1F3B5}",
-  "board game night instigator \u{1F3B2}",
   "will leave a movie theater at 1am with no regrets \u{1F3AC}",
   "tennis forehand: a work in progress \u{1F3BE}",
 ];
@@ -134,23 +133,46 @@ export const previousRoles: TimelineEntry[] = [
 
 export interface ProjectEntry {
   name: string;
-  description: string;
+  role: string;
+  tech: string;
+  date: string;
+  bullets: string[];
   githubUrl?: string;
 }
 
 export const projects: ProjectEntry[] = [
   {
-    name: "Pok\u00E9dex++",
-    description:
-      "Full-stack Flask web app with interactive dashboards, ML-powered stat prediction (Linear Regression, Random Forest), and CSV persistence",
-    githubUrl: "https://github.com/jleo28/AppliedPythonFinalProject",
+    name: "InBite",
+    role: "Full-stack Engineer",
+    tech: "Spring Boot, Java 21, React, Tailwind CSS, SQLite",
+    date: "March 2026 \u2013 May 2026",
+    bullets: [
+      "Shipped user authentication, recipe creation, host-managed event invitations, and an auto-scaling shopping list",
+      "Translated user needs into technical requirements across service layer, REST controllers, and React UI, partnering with teammates on API specs and shipping with 95%+ test coverage across JUnit, Mockito, Jest, and Cucumber/Selenium",
+    ],
   },
   {
     name: "TrailFinder",
-    description:
-      "Social hiking platform with friends system, activity feeds, and JWT auth (Java, MySQL, React)",
-    githubUrl:
-      "https://github.com/malachide2/CSCI201-Final-Project-Backend",
+    role: "Product Engineer",
+    tech: "Next.js 14, Supabase, Leaflet",
+    date: "October 2025 \u2013 December 2025",
+    bullets: [
+      "Designed a map-first trail discovery platform for LA hikers, scoping a friends activity feed, photo-based hike logging, and user-submitted trail flow through impact/effort prioritization",
+      "Translated user needs into technical requirements across geolocation suggestions, elevation charts, and star ratings, balancing depth with shipping velocity to drive a 3\u00D7 reduction in hike-logging friction vs. baseline AllTrails flow",
+      "Championed data integrity, implementing friends-only RLS policies in Supabase and seeding 20+ verified LA-area trails for day-one content quality",
+    ],
+    githubUrl: "https://github.com/malachide2/CSCI201-Final-Project-Backend",
+  },
+  {
+    name: "Pok\u00E9dex++",
+    role: "Product Engineer",
+    tech: "Next.js 14, Supabase, Python, Scikit-Learn",
+    date: "September 2024 \u2013 December 2024",
+    bullets: [
+      "Shipped type coverage matrix, defensive weakness summary, and shareable party URLs based on user needs",
+      "Balanced two ML models for stat prediction and similarity matching with accessibility, shipping keyboard-friendly reorder UI averaging 90%+ accuracy across 386 data points",
+    ],
+    githubUrl: "https://github.com/jleo28/AppliedPythonFinalProject",
   },
 ];
 

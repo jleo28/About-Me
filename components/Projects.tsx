@@ -9,19 +9,28 @@ export default function Projects({ stagger }: { stagger?: number }) {
       {projects.map((p, i) => (
         <div className="tl-item" key={i}>
           <div className="tl-top">
-            <div className="tl-role">{p.name}</div>
+            <div className="tl-top-inner">
+              <span className="tl-role">{p.name}</span>
+              <span className="proj-role">{p.role}</span>
+            </div>
+            <div className="tl-date">{p.date}</div>
           </div>
-          <div className="tl-desc">
-            {p.description}
-            {p.githubUrl && (
-              <>
-                {" \u2014 "}
-                <a href={p.githubUrl} target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              </>
-            )}
-          </div>
+          <div className="proj-tech">{p.tech}</div>
+          <ul className="proj-bullets">
+            {p.bullets.map((b, j) => (
+              <li key={j}>{b}</li>
+            ))}
+          </ul>
+          {p.githubUrl && (
+            <a
+              href={p.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="proj-github"
+            >
+              GitHub \u2197
+            </a>
+          )}
         </div>
       ))}
     </FadeIn>

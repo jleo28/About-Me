@@ -2,7 +2,6 @@
 import { skills, languages, currentRoles, previousRoles } from "@/lib/data";
 import ThemeToggle from "@/components/ThemeToggle";
 import SideLinks from "@/components/SideLinks";
-import NavDots from "@/components/NavDots";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import TagCloud from "@/components/TagCloud";
@@ -20,7 +19,6 @@ export default function Home() {
     <>
       <ThemeToggle />
       <SideLinks />
-      <NavDots />
 
       <div className="page-wrap">
         <Hero />

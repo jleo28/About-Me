@@ -64,10 +64,9 @@ export function useGreeting() {
 
   useEffect(() => {
     const h = new Date().getHours();
-    if (h >= 5 && h < 12) setGreeting("Morning! I'm Joe \u{1F44B}");
-    else if (h >= 12 && h < 17) setGreeting("Afternoon! I'm Joe \u{1F44B}");
-    else if (h >= 17 && h < 21) setGreeting("Evening! I'm Joe \u{1F44B}");
-    else setGreeting("Fellow night owl, I'm Joe \u{1F44B}");
+    if (h >= 5 && h < 12) setGreeting("Good morning, I'm Joe \u{1F44B}");
+    else if (h >= 12 && h < 17) setGreeting("Good afternoon, I'm Joe \u{1F44B}");
+    else setGreeting("Good evening, I'm Joe \u{1F44B}");
   }, []);
 
   return greeting;
