@@ -136,7 +136,7 @@ export interface ProjectEntry {
   role: string;
   tech: string;
   date: string;
-  bullets: string[];
+  description: string;
   githubUrl?: string;
 }
 
@@ -146,33 +146,24 @@ export const projects: ProjectEntry[] = [
     role: "Full-stack Engineer",
     tech: "Spring Boot, Java 21, React, Tailwind CSS, SQLite",
     date: "March 2026 \u2013 May 2026",
-    bullets: [
-      "Shipped user authentication, recipe creation, host-managed event invitations, and an auto-scaling shopping list",
-      "Translated user needs into technical requirements across service layer, REST controllers, and React UI, partnering with teammates on API specs and shipping with 95%+ test coverage across JUnit, Mockito, Jest, and Cucumber/Selenium",
-    ],
+    description:
+      "shipped user auth, recipe creation, event invitations, and auto-scaling shopping list with 95%+ test coverage across JUnit, Mockito, Jest, and Cucumber/Selenium",
   },
   {
     name: "TrailFinder",
     role: "Product Engineer",
     tech: "Next.js 14, Supabase, Leaflet",
     date: "October 2025 \u2013 December 2025",
-    bullets: [
-      "Designed a map-first trail discovery platform for LA hikers, scoping a friends activity feed, photo-based hike logging, and user-submitted trail flow through impact/effort prioritization",
-      "Translated user needs into technical requirements across geolocation suggestions, elevation charts, and star ratings, balancing depth with shipping velocity to drive a 3\u00D7 reduction in hike-logging friction vs. baseline AllTrails flow",
-      "Championed data integrity, implementing friends-only RLS policies in Supabase and seeding 20+ verified LA-area trails for day-one content quality",
-    ],
-    githubUrl: "https://github.com/malachide2/CSCI201-Final-Project-Backend",
+    description:
+      "map-first trail discovery for LA hikers; friends feed, photo logging, and 3\u00D7 reduction in hike-logging friction vs. AllTrails baseline",
   },
   {
     name: "Pok\u00E9dex++",
     role: "Product Engineer",
     tech: "Next.js 14, Supabase, Python, Scikit-Learn",
     date: "September 2024 \u2013 December 2024",
-    bullets: [
-      "Shipped type coverage matrix, defensive weakness summary, and shareable party URLs based on user needs",
-      "Balanced two ML models for stat prediction and similarity matching with accessibility, shipping keyboard-friendly reorder UI averaging 90%+ accuracy across 386 data points",
-    ],
-    githubUrl: "https://github.com/jleo28/AppliedPythonFinalProject",
+    description:
+      "type coverage matrix, defensive weakness summaries, and dual ML models for stat prediction + similarity matching averaging 90%+ accuracy across 386 data points",
   },
 ];
 
