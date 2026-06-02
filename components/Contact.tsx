@@ -5,8 +5,15 @@ import FadeIn from "./FadeIn";
 export default function Contact({ stagger }: { stagger?: number }) {
   return (
     <FadeIn id="contact" className="section" stagger={stagger}>
-      <div className="section-label">contact</div>
+      <div className="section-label">contact me</div>
       <div className="contact-row">
+        <a href="mailto:work@jleo.me" className="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="M22 4L12 13 2 4" />
+          </svg>
+          work@jleo.me
+        </a>
         <a href={socialLinks.resume} target="_blank" rel="noopener noreferrer" className="contact-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -16,13 +23,6 @@ export default function Contact({ stagger }: { stagger?: number }) {
             <polyline points="10 9 9 9 8 9" />
           </svg>
           Resume
-        </a>
-        <a href="mailto:work@jleo.me" className="contact-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-            <rect x="2" y="4" width="20" height="16" rx="2" />
-            <path d="M22 4L12 13 2 4" />
-          </svg>
-          work@jleo.me
         </a>
         <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link">
           <svg viewBox="0 0 24 24" fill="currentColor">
