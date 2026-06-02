@@ -17,18 +17,12 @@ export default function Contact({ stagger }: { stagger?: number }) {
           </svg>
           Resume
         </a>
-        <a href={`mailto:${socialLinks.email}`} className="contact-link">
+        <a href="mailto:work@jleo.me" className="contact-link">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
             <rect x="2" y="4" width="20" height="16" rx="2" />
             <path d="M22 4L12 13 2 4" />
           </svg>
-          {socialLinks.email}
-        </a>
-        <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" className="contact-link">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.259 5.632L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z" />
-          </svg>
-          @josephandrewleo
+          work@jleo.me
         </a>
         <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" className="contact-link">
           <svg viewBox="0 0 24 24" fill="currentColor">
