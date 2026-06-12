@@ -5,6 +5,12 @@
 // Removed tagline:
 //   "board game night instigator 🎲",
 
+// ── From app/page.tsx › skills section ───────────────────────────────────────
+// Removed: <TagCloud id="skills" label="skills" items={skills} stagger={6} />
+// skills array remains in lib/data.ts (still imported by terminal "skills" command).
+// To restore: re-add the TagCloud line and the `skills` import in app/page.tsx,
+// and re-add the { id: "skills", label: "skills" } entry to NavDots section lists.
+
 // ── From lib/data.ts › projects (old structure) ──────────────────────────────
 // Old ProjectEntry interface only had: name, description, githubUrl
 // Old projects:

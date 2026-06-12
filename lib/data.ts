@@ -167,11 +167,10 @@ export const projects: ProjectEntry[] = [
     tag: "full-stack \u00B7 spring boot \u00B7 react",
     description:
       "A recipe and event app with auto-scaling shopping lists, built end-to-end with 95%+ test coverage.",
-    // TODO: confirm the correct deployed URL for InBite
-    liveUrl: "https://inbite-PLACEHOLDER.vercel.app",
+    liveUrl: "https://inbite-ecru.vercel.app",
     githubUrl: "https://github.com/jleo28/inbite",
     imageUrl:
-      "https://iad.microlink.io/p6gQWlQGDkBWnUd1OIEQqdzgbcf1hyG-ecwOT2ANzjWMq3YgVnokwUaz-OTbsTlK_FKwQDLMNKWFcHTa0TdRsA.png",
+      "https://iad.microlink.io/r5p14WLJBAwp8Mb-Ho1fKGwwqABUULohfaffDbkTj2pFHHwrupScaJQbPM26X-8I-Bhc9IrBfX7DrSaSu8AlDA.png",
   },
 ];
 
