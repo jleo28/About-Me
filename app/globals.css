@@ -417,6 +417,58 @@ a {
   margin-bottom: 0.4rem;
 }
 
+.project-card {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.15rem;
+  margin-bottom: 1.25rem;
+  transition: all 0.2s;
+}
+.project-card:last-child {
+  margin-bottom: 0;
+}
+.project-card:hover {
+  border-color: var(--border);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 0.85rem;
+}
+.project-tag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+.project-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 1.6rem;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+.project-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+.project-links .contact-link {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.78rem;
+}
+
 /* ─────────────────────────────────────────── */
 /* Misc grid (honors)                          */
 /* ─────────────────────────────────────────── */
