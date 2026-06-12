@@ -1,14 +1,23 @@
 // components/Projects.tsx
 // TODO: swap imageUrl placeholders for custom GIFs — see lib/data.ts
+"use client";
+
+import { useState } from "react";
 import { projects } from "@/lib/data";
 import FadeIn from "./FadeIn";
 
 export default function Projects({ stagger }: { stagger?: number }) {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
   return (
     <FadeIn id="projects" className="section" stagger={stagger}>
       <div className="section-label">projects</div>
       {projects.map((p, i) => (
-        <div className="project-card" key={i}>
+        <div
+          className={`project-card ${expanded === i ? "expanded" : ""}`}
+          key={i}
+          onClick={() => setExpanded(expanded === i ? null : i)}
+        >
           {p.imageUrl && (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -26,6 +35,7 @@ export default function Projects({ stagger }: { stagger?: number }) {
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link"
+              onClick={(e) => e.stopPropagation()}
             >
               live ↗
             </a>
@@ -35,6 +45,7 @@ export default function Projects({ stagger }: { stagger?: number }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-link"
+                onClick={(e) => e.stopPropagation()}
               >
                 github ↗
               </a>
