@@ -1,10 +1,9 @@
 // app/page.tsx
-import { skills, currentRoles, previousRoles } from "@/lib/data";
+import { currentRoles, previousRoles } from "@/lib/data";
 import ThemeToggle from "@/components/ThemeToggle";
 import SideLinks from "@/components/SideLinks";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import TagCloud from "@/components/TagCloud";
 import Timeline from "@/components/Timeline";
 import Projects from "@/components/Projects";
 import Extracurriculars from "@/components/Extracurriculars";
@@ -22,7 +21,7 @@ export default function Home() {
       <div className="page-wrap">
         <Hero />
         <About stagger={5} />
-        <TagCloud id="skills" label="skills" items={skills} stagger={6} />
+        {/* <TagCloud id="skills" label="skills" items={skills} stagger={6} /> */}
         {/* <TagCloud id="languages" label="languages" items={languages} stagger={7} /> */}
         <Timeline id="currently" label="currently" entries={currentRoles} stagger={7} />
         <Timeline id="previously" label="previously" entries={previousRoles} stagger={8} />
