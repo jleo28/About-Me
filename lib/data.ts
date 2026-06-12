@@ -133,37 +133,45 @@ export const previousRoles: TimelineEntry[] = [
 
 export interface ProjectEntry {
   name: string;
-  role: string;
-  tech: string;
-  date: string;
+  tag: string;
   description: string;
+  liveUrl: string;
   githubUrl?: string;
+  imageUrl?: string;
 }
 
+// imageUrl values are temporary microlink.io screenshot placeholders.
 export const projects: ProjectEntry[] = [
   {
-    name: "InBite",
-    role: "Full-stack Engineer",
-    tech: "Spring Boot, Java 21, React, Tailwind CSS, SQLite",
-    date: "March 2026 \u2013 May 2026",
-    description:
-      "shipped user auth, recipe creation, event invitations, and auto-scaling shopping list with 95%+ test coverage across JUnit, Mockito, Jest, and Cucumber/Selenium",
-  },
-  {
     name: "TrailFinder",
-    role: "Product Engineer",
-    tech: "Next.js 14, Supabase, Leaflet",
-    date: "October 2025 \u2013 December 2025",
+    tag: "solo rebuild \u00B7 next.js \u00B7 supabase",
     description:
-      "map-first trail discovery for LA hikers; friends feed, photo logging, and 3\u00D7 reduction in hike-logging friction vs. AllTrails baseline",
+      "A map-first social hiking platform, rebuilt solo from a Java team project into a faster, friends-first experience.",
+    liveUrl: "https://trailfinder-gamma.vercel.app",
+    githubUrl: "https://github.com/jleo28/TrailFinder",
+    imageUrl:
+      "https://iad.microlink.io/oCDPK8r1NewVVKZ6-MjfccP6jH4vLlwVWq7UGz2JN0H97-ywE5DddfqEd2z0tSimJ5Ho43zLsy2mOpVoiD4O1A.png",
   },
   {
     name: "Pok\u00E9dex++",
-    role: "Product Engineer",
-    tech: "Next.js 14, Supabase, Python, Scikit-Learn",
-    date: "September 2024 \u2013 December 2024",
+    tag: "ml engineer \u00B7 next.js \u00B7 scikit-learn",
     description:
-      "type coverage matrix, defensive weakness summaries, and dual ML models for stat prediction + similarity matching averaging 90%+ accuracy across 386 data points",
+      "A Pok\u00E9dex with built-in ML, predicting stats and matching similar Pok\u00E9mon across 386 data points.",
+    liveUrl: "https://pokedexpp.vercel.app",
+    githubUrl: "https://github.com/jleo28/pokedex-plus",
+    imageUrl:
+      "https://iad.microlink.io/BdF2a_FZ0D60fEF5UmFRwHLAiAF9v9x4ihk4FXrEEXTC2wT_C4FNSqnEijS2BCxUN-aFC1s-pQMZRc-5FXkveQ.png",
+  },
+  {
+    name: "InBite",
+    tag: "full-stack \u00B7 spring boot \u00B7 react",
+    description:
+      "A recipe and event app with auto-scaling shopping lists, built end-to-end with 95%+ test coverage.",
+    // TODO: confirm the correct deployed URL for InBite
+    liveUrl: "https://inbite-PLACEHOLDER.vercel.app",
+    githubUrl: "https://github.com/jleo28/inbite",
+    imageUrl:
+      "https://iad.microlink.io/p6gQWlQGDkBWnUd1OIEQqdzgbcf1hyG-ecwOT2ANzjWMq3YgVnokwUaz-OTbsTlK_FKwQDLMNKWFcHTa0TdRsA.png",
   },
 ];
 
