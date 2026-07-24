@@ -1,5 +1,5 @@
 // components/Projects.tsx
-// TODO: swap imageUrl placeholders for custom GIFs — see lib/data.ts
+// TODO: swap imageUrl placeholders for static images — see lib/data.ts
 "use client";
 
 import { useState } from "react";
@@ -14,7 +14,7 @@ export default function Projects({ stagger }: { stagger?: number }) {
       <div className="section-label">projects</div>
       {projects.map((p, i) => (
         <div
-          className={`project-card ${expanded === i ? "expanded" : ""}`}
+          className={`project-card${expanded === i ? " expanded" : ""}`}
           key={i}
           onClick={() => setExpanded(expanded === i ? null : i)}
         >
