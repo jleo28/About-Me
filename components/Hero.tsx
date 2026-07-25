@@ -1,13 +1,12 @@
 // components/Hero.tsx
 "use client";
 
-import { taglines, cycleWords } from "@/lib/data";
-import { useGreeting, useRandomTagline, useCycleWord } from "@/lib/hooks";
+import { cycleWords } from "@/lib/data";
+import { useGreeting, useCycleWord } from "@/lib/hooks";
 import FadeIn from "./FadeIn";
 
 export default function Hero() {
   const greeting = useGreeting();
-  const tagline = useRandomTagline(taglines);
   const { word, fading } = useCycleWord(cycleWords);
 
   return (
@@ -15,9 +14,7 @@ export default function Hero() {
       <FadeIn stagger={0}>
         <p className="hero-greeting">{greeting}</p>
       </FadeIn>
-      <FadeIn stagger={1}>
-        <p className="hero-tagline">{tagline}</p>
-      </FadeIn>
+      {/* <FadeIn stagger={1}><p className="hero-tagline">{tagline}</p></FadeIn> */}
       <FadeIn stagger={2}>
         <h1>
           I build{" "}

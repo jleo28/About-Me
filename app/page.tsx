@@ -8,6 +8,7 @@ import Timeline from "@/components/Timeline";
 import Projects from "@/components/Projects";
 import Extracurriculars from "@/components/Extracurriculars";
 import Consuming from "@/components/Consuming";
+import Interests from "@/components/Interests";
 import Contact from "@/components/Contact";
 import Terminal from "@/components/Terminal";
 
@@ -28,8 +29,8 @@ export default function Home() {
         {/* <Honors stagger={10} /> */}
         <Extracurriculars stagger={10} />
         <Consuming stagger={11} />
-        {/* <Interests stagger={12} /> */}
-        <Contact stagger={12} />
+        <Interests stagger={12} />
+        <Contact stagger={13} />
 
         <footer>
           &copy; 2026 Joseph Leo &middot; built with purpose and 200mg caffeine
