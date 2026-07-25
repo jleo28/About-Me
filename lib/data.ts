@@ -150,7 +150,7 @@ export const projects: ProjectEntry[] = [
     liveUrl: "https://trailfinder-gamma.vercel.app",
     githubUrl: "https://github.com/jleo28/TrailFinder",
     imageUrl:
-      "https://iad.microlink.io/oCDPK8r1NewVVKZ6-MjfccP6jH4vLlwVWq7UGz2JN0H97-ywE5DddfqEd2z0tSimJ5Ho43zLsy2mOpVoiD4O1A.png",
+      "https://image.thum.io/get/width/1280/crop/720/https://trailfinder-gamma.vercel.app",
   },
   {
     name: "Pok\u00E9dex++",
@@ -160,7 +160,7 @@ export const projects: ProjectEntry[] = [
     liveUrl: "https://pokedexpp.vercel.app",
     githubUrl: "https://github.com/jleo28/pokedex-plus",
     imageUrl:
-      "https://iad.microlink.io/BdF2a_FZ0D60fEF5UmFRwHLAiAF9v9x4ihk4FXrEEXTC2wT_C4FNSqnEijS2BCxUN-aFC1s-pQMZRc-5FXkveQ.png",
+      "https://image.thum.io/get/width/1280/crop/720/https://pokedexpp.vercel.app",
   },
   {
     name: "InBite",
@@ -170,7 +170,7 @@ export const projects: ProjectEntry[] = [
     liveUrl: "https://inbite-ecru.vercel.app",
     githubUrl: "https://github.com/jleo28/inbite",
     imageUrl:
-      "https://iad.microlink.io/r5p14WLJBAwp8Mb-Ho1fKGwwqABUULohfaffDbkTj2pFHHwrupScaJQbPM26X-8I-Bhc9IrBfX7DrSaSu8AlDA.png",
+      "https://image.thum.io/get/width/1280/crop/720/https://inbite-ecru.vercel.app",
   },
 ];
 
