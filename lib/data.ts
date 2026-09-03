@@ -143,6 +143,16 @@ export interface ProjectEntry {
 // imageUrl values are temporary microlink.io screenshot placeholders.
 export const projects: ProjectEntry[] = [
   {
+    name: "Litmus",
+    tag: "solo build · next.js · typescript · zustand",
+    description:
+      "A client-side tool for F-1 students to check job offers against their school's CPT rules, extracting key details and flagging issues before a DSO review.",
+    liveUrl: "https://litmus-cyan.vercel.app",
+    githubUrl: "https://github.com/jleo28/litmus",
+    imageUrl:
+      "https://image.thum.io/get/width/1280/crop/720/https://litmus-cyan.vercel.app",
+  },
+  {
     name: "TrailFinder",
     tag: "solo rebuild \u00B7 next.js \u00B7 supabase",
     description:
