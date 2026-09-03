@@ -144,7 +144,7 @@ export interface ProjectEntry {
 export const projects: ProjectEntry[] = [
   {
     name: "Litmus",
-    tag: "solo build · next.js · typescript · zustand",
+    tag: "next.js · typescript · zustand",
     description:
       "A client-side tool for F-1 students to check job offers against their school's CPT rules, extracting key details and flagging issues before a DSO review.",
     liveUrl: "https://litmus-cyan.vercel.app",
@@ -154,7 +154,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     name: "TrailFinder",
-    tag: "solo rebuild \u00B7 next.js \u00B7 supabase",
+    tag: "next.js \u00B7 supabase",
     description:
       "A map-first social hiking platform, rebuilt solo from a Java team project into a faster, friends-first experience.",
     liveUrl: "https://trailfinder-gamma.vercel.app",
@@ -164,7 +164,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     name: "Pok\u00E9dex++",
-    tag: "ml engineer \u00B7 next.js \u00B7 scikit-learn",
+    tag: "next.js \u00B7 scikit-learn",
     description:
       "A Pok\u00E9dex with built-in ML, predicting stats and matching similar Pok\u00E9mon across 386 data points.",
     liveUrl: "https://pokedexpp.vercel.app",
@@ -174,7 +174,7 @@ export const projects: ProjectEntry[] = [
   },
   {
     name: "InBite",
-    tag: "full-stack \u00B7 spring boot \u00B7 react",
+    tag: "spring boot \u00B7 react",
     description:
       "A recipe and event app with auto-scaling shopping lists, built end-to-end with 95%+ test coverage.",
     liveUrl: "https://inbite-ecru.vercel.app",
