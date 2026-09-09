@@ -82,17 +82,26 @@ export interface TimelineEntry {
 
 export const currentRoles: TimelineEntry[] = [
   {
+    role: "App Development Intern",
+    date: "Sep 2026 \u2013 Present",
+    company: "Keck Medicine of USC",
+    companyUrl: "https://keckmedicine.org",
+    logoUrl: "https://www.google.com/s2/favicons?domain=keckmedicine.org&sz=128",
+    description:
+      "building and supporting enterprise applications on the AppDev team within Information Services",
+  },
+];
+
+export const previousRoles: TimelineEntry[] = [
+  {
     role: "Digital Systems Student Worker Manager",
-    date: "Feb 2025 \u2013 Present",
+    date: "Feb 2025 \u2013 May 2026",
     company: "USC Mann School of Pharmacy DHBB",
     companyUrl: "https://mann.usc.edu",
     logoUrl: "https://www.google.com/s2/favicons?domain=usc.edu&sz=128",
     description:
       "leading a team of 6, building geo-tracking attendance systems, coordinating 15+ events/semester",
   },
-];
-
-export const previousRoles: TimelineEntry[] = [
   {
     role: "Gen. AI Engineer Intern",
     date: "May \u2013 Aug 2025",
