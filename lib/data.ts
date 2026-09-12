@@ -8,7 +8,7 @@
 export const siteMetadata = {
   title: "Joseph Leo",
   description:
-    "CS + Business Administration @ USC. Three internships shipping production chatbots, financial NLP pipelines, and internal tools across teams spanning three continents.",
+    "CS + Business Administration @ USC.",
   url: "https://jleo.me",
 };
 
@@ -41,7 +41,7 @@ export const cycleWords = [
   "purposeful",
 ];
 
-export const aboutText = `<strong>CS</strong> + <strong>Business Administration</strong> @ <a href="https://usc.edu/" target="_blank" rel="noopener noreferrer">USC</a>. Three internships shipping production chatbots, financial NLP pipelines, and internal tools across teams spanning three continents. I gravitate towards <em>the messy middle</em> between engineering and business and love work where you can trace a line from the code to the impact.`;
+export const aboutText = `<strong>CS</strong> + <strong>Business Administration</strong> @ <a href="https://usc.edu/" target="_blank" rel="noopener noreferrer">USC</a>. I gravitate towards <em>the messy middle</em> between engineering and business and love work where you can trace a line from the code to the impact.`;
 
 export const skills = [
   "Python",
@@ -83,7 +83,7 @@ export interface TimelineEntry {
 export const currentRoles: TimelineEntry[] = [
   {
     role: "App Development Intern",
-    date: "Sep 2026 \u2013 Present",
+    date: "Aug 2026 \u2013 Present",
     company: "Keck Medicine of USC",
     companyUrl: "https://keckmedicine.org",
     logoUrl: "https://www.google.com/s2/favicons?domain=keckmedicine.org&sz=128",
