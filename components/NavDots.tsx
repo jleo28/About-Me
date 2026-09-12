@@ -12,7 +12,6 @@ const sections = [
   { id: "projects", label: "projects" },
   { id: "honors", label: "honors" },
   { id: "extracurriculars", label: "beyond the classroom" },
-  { id: "consuming", label: "currently consuming" },
   { id: "littlethings", label: "the little things" },
   { id: "contact", label: "contact" },
 ];

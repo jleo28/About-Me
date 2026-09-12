@@ -242,52 +242,27 @@ export interface ExtracurricularEntry {
   role: string;
   org: string;
   note?: string;
+  company?: string;
+  companyUrl?: string;
+  logoUrl?: string;
 }
 
 export const extracurriculars: ExtracurricularEntry[] = [
   {
     role: "Project Manager",
     org: "Core Consulting Club (CCG)",
-    note: "Led 5 consultants for Ohana Subleasing Co. ($11.5M raised, $20M+ earned by hosts, backed by Zillow co-founder & ex-Airbnb execs)",
+    company: "Ohana Subleasing Co.",
+    companyUrl: "https://liveohana.ai",
+    logoUrl: "https://www.google.com/s2/favicons?domain=liveohana.ai&sz=128",
+    note: "Led 5 consultants through Core Consulting Club (CCG) \u2014 Ohana has raised $11.5M+ from investors including Zillow co-founder Spencer Rascoff and ex-Airbnb execs, seen $20M+ earned by hosts, and is on pace to process $60M in annual payment volume with intern-housing partnerships at Wells Fargo, eBay, and NVIDIA",
   },
   {
     role: "Business Analyst",
     org: "Avenues Consulting Group (ACG)",
-    note: "For CodeNinjas",
-  },
-  {
-    role: "Co-Chair of Assembly Operations",
-    org: "International Students\u2019 Assembly (ISA)",
-  },
-  {
-    role: "Chair of Finance",
-    org: "Association of Indonesian Students at USC (ASIS)",
-  },
-  {
-    role: "Chair of Finance",
-    org: "USC Grand Challenge Scholars\u2019 Program (GCSP)",
-  },
-  {
-    role: "Educational Consultant",
-    org: "AcceptED",
-  },
-];
-
-export interface ConsumingEntry {
-  label: string;
-  text: string;
-  url?: string;
-}
-
-export const currentlyConsuming: ConsumingEntry[] = [
-  {
-    label: "listening to:",
-    text: "Luv (sic) pt6 Uyama Hiroto Remix \u2014 Nujabes, Uyama Hiroto",
-    url: "https://open.spotify.com/track/4x7z7PwjRpbtFNKXihsHRr",
-  },
-  {
-    label: "watching:",
-    text: "A Knight of the Seven Kingdoms S1",
+    company: "Code Ninjas",
+    companyUrl: "https://www.codeninjas.com",
+    logoUrl: "https://www.google.com/s2/favicons?domain=codeninjas.com&sz=128",
+    note: "Consulted through Avenues Consulting Group (ACG) \u2014 Code Ninjas is the largest kids\u2019 coding franchise, with 300+ locations across the US, Canada & UK, backed by private equity firm Eagle Merchant Partners",
   },
 ];
 

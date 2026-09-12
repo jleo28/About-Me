@@ -583,59 +583,8 @@ a {
 
 /* ─────────────────────────────────────────── */
 /* Extracurriculars                            */
+/* Reuses .tl-* (Timeline) classes             */
 /* ─────────────────────────────────────────── */
-.ec-list {
-  list-style: none;
-  padding: 0;
-}
-.ec-list li {
-  padding: 0.55rem 0;
-  border-bottom: 1px solid var(--border-light);
-  font-size: 0.9rem;
-}
-.ec-list li:last-child {
-  border-bottom: none;
-}
-.ec-role {
-  font-weight: 600;
-}
-.ec-org {
-  color: var(--text-soft);
-}
-.ec-note {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-
-/* ─────────────────────────────────────────── */
-/* Consuming                                   */
-/* ─────────────────────────────────────────── */
-.consuming-list {
-  list-style: none;
-  padding: 0;
-}
-.consuming-list li {
-  font-size: 0.88rem;
-  color: var(--text-soft);
-  padding: 0.3rem 0;
-}
-.consuming-list li em {
-  font-style: normal;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.76rem;
-  color: var(--text-muted);
-  margin-right: 0.4rem;
-}
-.consuming-list li a {
-  color: var(--text-soft);
-  text-decoration: none;
-  border-bottom: 1px solid var(--border);
-  transition: all 0.2s;
-}
-.consuming-list li a:hover {
-  color: var(--text);
-  border-color: var(--text);
-}
 
 /* ─────────────────────────────────────────── */
 /* Interests                                   */
