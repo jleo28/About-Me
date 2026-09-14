@@ -1,4 +1,6 @@
 // components/Extracurriculars.tsx
+"use client";
+
 import { extracurriculars } from "@/lib/data";
 import FadeIn from "./FadeIn";
 
