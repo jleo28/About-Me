@@ -8,7 +8,7 @@
 // and restore the .consuming-list rules in app/globals.css (see
 // _archive/archived-content.ts).
 
-import FadeIn from "./FadeIn";
+import FadeIn from "@/components/FadeIn";
 
 interface ConsumingEntry {
   label: string;
