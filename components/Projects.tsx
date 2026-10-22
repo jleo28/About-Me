@@ -3,6 +3,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { projects } from "@/lib/data";
 import FadeIn from "./FadeIn";
 
@@ -26,6 +27,7 @@ export default function Projects({ stagger }: { stagger?: number }) {
               className="project-image"
             />
           )}
+          {p.badge && <div className="project-badge">{p.badge}</div>}
           <div className="project-tag">{p.tag}</div>
           <div className="project-title">{p.name}</div>
           <p className="tl-desc">{p.description}</p>
@@ -39,16 +41,33 @@ export default function Projects({ stagger }: { stagger?: number }) {
             >
               live ↗
             </a>
-            {p.githubUrl && (
-              <a
-                href={p.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-link"
+            {[
+              { url: p.githubUrl, label: "github ↗" },
+              { url: p.videoUrl, label: "video ↗" },
+              { url: p.devpostUrl, label: "devpost ↗" },
+            ].map(
+              (l) =>
+                l.url && (
+                  <a
+                    key={l.label}
+                    href={l.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-link"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {l.label}
+                  </a>
+                )
+            )}
+            {p.caseStudyUrl && (
+              <Link
+                href={p.caseStudyUrl}
+                className="contact-link project-case-link"
                 onClick={(e) => e.stopPropagation()}
               >
-                github ↗
-              </a>
+                case study →
+              </Link>
             )}
           </div>
         </div>

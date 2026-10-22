@@ -147,10 +147,28 @@ export interface ProjectEntry {
   liveUrl: string;
   githubUrl?: string;
   imageUrl?: string;
+  badge?: string;
+  videoUrl?: string;
+  devpostUrl?: string;
+  caseStudyUrl?: string;
 }
 
 // imageUrl values are temporary microlink.io screenshot placeholders.
 export const projects: ProjectEntry[] = [
+  {
+    name: "PortTable",
+    tag: "typescript · react · three.js · terminal49 api · vercel",
+    badge: "Finalist · InnovateLA Dual-Use Hackathon 2026",
+    description:
+      "When a port terminal has a bad morning, PortTable tells the gate planner which containers can’t wait, why, and what to do, and flags cargo for security review.",
+    liveUrl: "https://portable-ten.vercel.app",
+    githubUrl: "https://github.com/tun-onraksa/port-porch-porsche",
+    videoUrl: "https://youtu.be/ZJr4AeMTCKI",
+    devpostUrl: "https://devpost.com/software/porttable",
+    caseStudyUrl: "/projects/porttable",
+    imageUrl:
+      "https://image.thum.io/get/width/1280/crop/720/https://portable-ten.vercel.app",
+  },
   {
     name: "Litmus",
     tag: "next.js · typescript · zustand",
@@ -297,4 +315,73 @@ export const terminalCommands: Record<string, string> = {
     "on repeat: Luv (sic) pt6 Uyama Hiroto Remix \u2014 Nujabes, Uyama Hiroto \u{1F3B5}",
   contact:
     "jaleo@usc.edu | linkedin.com/in/josephleo05 | github.com/jleo28",
+};
+// ─────────────────────────────────────────────
+// PortTable case study (/projects/porttable)
+// Every number from the demo is labelled "in simulation":
+// only 4 container records are real Terminal49 data.
+// ─────────────────────────────────────────────
+
+export interface CaseStudyScreenshot {
+  src: string;
+  caption: string;
+}
+
+export const portTableCaseStudy = {
+  name: "PortTable",
+  badge: "Finalist · InnovateLA Dual-Use Hackathon 2026",
+  logoUrl: "/logos/PortTable_Logo.png",
+  event:
+    "InnovateLA x USC Viterbi Dual-Use Hackathon · LA Tech Week · Oct 16–18, 2026 · Ports & Logistics track (Terminal49)",
+  team: "Elly Chong, Joseph Leo, Tun Onraksa, Shannon Sutiono",
+  timeframe: "Built in about 24 hours, after pivoting to this idea on day 2.",
+  summary:
+    "When a port terminal has a bad morning (gate lanes down, customs holds, refrigerated containers warming), PortTable tells the gate planner which containers can’t wait, why, and what to do. It also flags cargo for security review.",
+  tags: ["TypeScript", "React", "Three.js", "Terminal49 API", "Vercel"],
+  links: [
+    { label: "live demo", url: "https://portable-ten.vercel.app" },
+    { label: "code", url: "https://github.com/tun-onraksa/port-porch-porsche" },
+    { label: "video", url: "https://youtu.be/ZJr4AeMTCKI" },
+    { label: "devpost", url: "https://devpost.com/software/porttable" },
+  ],
+  problem: [
+    "When a terminal is disrupted (gate lanes down, customs holds, refrigerated containers warming), the gate planner has to decide quickly which containers move first and which can wait.",
+    "A wrong call means warming reefers, trucks queuing for hours, and growing delay and handling charges. In a crisis, the same call decides how fast medicine, food and relief supplies get out.",
+  ],
+  dualUse:
+    "The same prioritisation engine serves everyday commercial throughput and crisis response, and its inspection ranking supports port security.",
+  built: [
+    "<strong>Dashboard:</strong> a one-sentence situation summary, four key numbers, and “Decide next”: the five most urgent containers, each with its reason, suggested action and one-click approval. A person approves every action.",
+    "<strong>Gate plan:</strong> compares the plan with “hold everything.” In simulation, it cut projected delay and handling charges by about 88%, left zero trucks waiting over 3 hours, and got all 11 priority containers out by 11:00.",
+    "<strong>Security review:</strong> inspection cases ranked by an explainable review-priority score with a per-point breakdown (e.g. +40 for a declared-empty box that weighs 27,400 kg). Customs, USDA and VACIS holds can never be overridden.",
+    "<strong>Terminal49 integration:</strong> a serverless API route that sends tracking requests with a server-side key, a “Look up a box” panel for container status and milestones, and a status light for the API connection. Real shipment data (EVER LAUREL, 4 containers) sits next to simulated data, always labelled.",
+    "<strong>Rulebook:</strong> white-label priority rules with presets such as “Lifeline first” for a crisis. The queue re-ranks instantly, and the safety rules stay locked.",
+    "<strong>3D terminal simulation and “Follow C184”:</strong> a guided demo that follows one refrigerated container through a data conflict, inspection and release.",
+  ],
+  role: [
+    "I built the Terminal49 integration and deployed it on Vercel: the serverless proxy, key management, tracking requests and a read-back lookup with a labelled fallback.",
+    "I designed and built the Dashboard redesign, which became the app’s home page: “Decide next” with expandable reasoning that routes to Security review or the 3D yard, the gate plan summary, the lane strip, and the Terminal49 panels and status light.",
+    "I built the Rulebook (editable, white-label priority rules with locked safety rules) and the parcel-style container tracker, which works like a package-delivery tracker but continues through the terminal’s own steps.",
+    "I integrated a teammate’s review-priority model into Security review.",
+    "I managed branches, pull requests, merges and production deploys for the team repo, and wrote the demo script and parts of the pitch (feasibility, funding, responsible use).",
+    "My teammates built the PortTable shell and 3D simulation, the Priority Lanes engine and the C184 demo.",
+  ],
+  outcome:
+    "Finalist at the InnovateLA x USC Viterbi Dual-Use Hackathon. PortTable is a hackathon prototype, not a deployed production system.",
+  honesty:
+    "Only 4 container records are real Terminal49 data; the rest of the 112-container scenario is simulated. The free Terminal49 plan only allows creating tracking requests, so reading data back needs a paid key.",
+  learned: [
+    "Real data is often thin, so the craft is in building realistic simulated scenarios on top of it, and labelling clearly which is which.",
+    "Operators trust a priority score they can read. Keep it explainable and modular so each port can plug in its own rules, then move to data-driven scoring.",
+  ],
+  // PLACEHOLDER: capture these from the live demo at 1440×900 and drop
+  // them into public/projects/porttable/ with these exact filenames.
+  // Missing files are hidden automatically.
+  screenshots: [
+    { src: "/projects/porttable/01-dashboard.png", caption: "Dashboard" },
+    { src: "/projects/porttable/02-decide-next.png", caption: "A “Decide next” row expanded" },
+    { src: "/projects/porttable/03-security-review.png", caption: "Security review with the “Why 100” breakdown open" },
+    { src: "/projects/porttable/04-follow-c184.png", caption: "Live operations during “Follow C184” (simulated data)" },
+    { src: "/projects/porttable/05-rulebook.png", caption: "Rulebook" },
+  ] as CaseStudyScreenshot[],
 };
