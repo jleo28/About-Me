@@ -657,9 +657,7 @@ a {
 }
 .case-shots figure img {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top;
+  height: auto;
   border-radius: 12px;
   border: 1px solid var(--border-light);
   display: block;

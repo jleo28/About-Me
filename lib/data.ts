@@ -374,14 +374,13 @@ export const portTableCaseStudy = {
     "Real data is often thin, so the craft is in building realistic simulated scenarios on top of it, and labelling clearly which is which.",
     "Operators trust a priority score they can read. Keep it explainable and modular so each port can plug in its own rules, then move to data-driven scoring.",
   ],
-  // PLACEHOLDER: capture these from the live demo at 1440×900 and drop
-  // them into public/projects/porttable/ with these exact filenames.
-  // Missing files are hidden automatically.
+  screenshotsNote:
+    "All screenshots show the simulated 112-container disruption scenario.",
   screenshots: [
-    { src: "/projects/porttable/01-dashboard.png", caption: "Dashboard" },
-    { src: "/projects/porttable/02-decide-next.png", caption: "A “Decide next” row expanded" },
-    { src: "/projects/porttable/03-security-review.png", caption: "Security review with the “Why 100” breakdown open" },
-    { src: "/projects/porttable/04-follow-c184.png", caption: "Live operations during “Follow C184” (simulated data)" },
-    { src: "/projects/porttable/05-rulebook.png", caption: "Rulebook" },
+    { src: "/projects/porttable/01-dashboard.webp", caption: "Dashboard: situation summary, key numbers, \u201CDecide next\u201D and the gate plan" },
+    { src: "/projects/porttable/02-priority-queue.webp", caption: "Priority queue with holds, deadlines, lane slots and one-click approval" },
+    { src: "/projects/porttable/03-security-review.webp", caption: "Security review with the \u201CWhy 100\u201D breakdown open" },
+    { src: "/projects/porttable/04-follow-c184.webp", caption: "Live operations during \u201CFollow C184\u201D" },
+    { src: "/projects/porttable/05-rulebook.webp", caption: "Rulebook with white-label presets and locked safety rules" },
   ] as CaseStudyScreenshot[],
 };

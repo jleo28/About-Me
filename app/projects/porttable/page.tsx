@@ -96,7 +96,7 @@ export default function PortTablePage() {
           ))}
         </FadeIn>
 
-        <CaseScreenshots shots={cs.screenshots} />
+        <CaseScreenshots shots={cs.screenshots} note={cs.screenshotsNote} />
 
         <footer>
           <Link href="/#projects" className="case-back" style={{ marginBottom: 0 }}>
