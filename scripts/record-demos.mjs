@@ -31,13 +31,12 @@ const FLOWS = {
   porttable: {
     url: "https://portable-ten.vercel.app",
     async run(page) {
-      await pause(page, 3500);
-      await smoothScroll(page, 600);
-      await pause(page, 2000);
-      await smoothScroll(page, 600);
-      await pause(page, 2000);
-      await smoothScroll(page, -1200);
-      await pause(page, 1500);
+      // The dashboard scrolls inside its own panel, so walk the sidebar instead.
+      await pause(page, 3000);
+      for (const section of ["Live operations", "Security review", "Resource planning", "Dashboard"]) {
+        await page.getByText(section, { exact: true }).first().click().catch(() => {});
+        await pause(page, 2600);
+      }
     },
   },
 
@@ -73,10 +72,10 @@ const FLOWS = {
       await pause(page, 2000);
       await smoothScroll(page, 700);
       await pause(page, 1500);
-      await page.goto("https://trailfinder-gamma.vercel.app/trails");
-      await pause(page, 3500);
-      await smoothScroll(page, 500);
+      await smoothScroll(page, 700);
       await pause(page, 1500);
+      await page.goto("https://trailfinder-gamma.vercel.app/trails", { waitUntil: "networkidle" }).catch(() => {});
+      await pause(page, 3000);
     },
   },
 
