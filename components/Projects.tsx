@@ -1,5 +1,4 @@
 // components/Projects.tsx
-// TODO: swap imageUrl placeholders for static images — see lib/data.ts
 "use client";
 
 import { useState } from "react";
@@ -19,13 +18,27 @@ export default function Projects({ stagger }: { stagger?: number }) {
           key={i}
           onClick={() => setExpanded(expanded === i ? null : i)}
         >
-          {p.imageUrl && (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={p.imageUrl}
-              alt={`${p.name} preview`}
+          {p.previewVideo ? (
+            <video
               className="project-image"
+              src={p.previewVideo}
+              poster={p.imageUrl}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label={`${p.name} demo preview`}
             />
+          ) : (
+            p.imageUrl && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={p.imageUrl}
+                alt={`${p.name} preview`}
+                className="project-image"
+              />
+            )
           )}
           {p.badge && <div className="project-badge">{p.badge}</div>}
           <div className="project-tag">{p.tag}</div>

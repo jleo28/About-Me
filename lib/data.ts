@@ -147,13 +147,17 @@ export interface ProjectEntry {
   liveUrl: string;
   githubUrl?: string;
   imageUrl?: string;
+  // Looping silent clip recorded by scripts/record-demos.mjs; imageUrl is the poster/fallback.
+  previewVideo?: string;
   badge?: string;
   videoUrl?: string;
   devpostUrl?: string;
   caseStudyUrl?: string;
 }
 
-// imageUrl values are temporary microlink.io screenshot placeholders.
+// Preview clips and posters live in public/projects/<slug>/ and are re-recorded
+// by the "Record project previews" GitHub Action. InBite still uses a screenshot
+// placeholder until its demo is back online.
 export const projects: ProjectEntry[] = [
   {
     name: "PortTable",
@@ -166,8 +170,8 @@ export const projects: ProjectEntry[] = [
     videoUrl: "https://youtu.be/ZJr4AeMTCKI",
     devpostUrl: "https://devpost.com/software/porttable",
     caseStudyUrl: "/projects/porttable",
-    imageUrl:
-      "https://image.thum.io/get/width/1280/crop/720/https://portable-ten.vercel.app",
+    imageUrl: "/projects/porttable/poster.jpg",
+    previewVideo: "/projects/porttable/preview.mp4",
   },
   {
     name: "Litmus",
@@ -176,8 +180,8 @@ export const projects: ProjectEntry[] = [
       "A client-side tool for F-1 students to check job offers against their school's CPT rules, extracting key details and flagging issues before a DSO review.",
     liveUrl: "https://litmus-cyan.vercel.app",
     githubUrl: "https://github.com/jleo28/litmus",
-    imageUrl:
-      "https://image.thum.io/get/width/1280/crop/720/https://litmus-cyan.vercel.app",
+    imageUrl: "/projects/litmus/poster.jpg",
+    previewVideo: "/projects/litmus/preview.mp4",
   },
   {
     name: "TrailFinder",
@@ -186,8 +190,8 @@ export const projects: ProjectEntry[] = [
       "A map-first social hiking platform, rebuilt solo from a Java team project into a faster, friends-first experience.",
     liveUrl: "https://trailfinder-gamma.vercel.app",
     githubUrl: "https://github.com/jleo28/TrailFinder",
-    imageUrl:
-      "https://image.thum.io/get/width/1280/crop/720/https://trailfinder-gamma.vercel.app",
+    imageUrl: "/projects/trailfinder/poster.jpg",
+    previewVideo: "/projects/trailfinder/preview.mp4",
   },
   {
     name: "Pok\u00E9dex++",
@@ -196,8 +200,8 @@ export const projects: ProjectEntry[] = [
       "A Pok\u00E9dex with built-in ML, predicting stats and matching similar Pok\u00E9mon across 386 data points.",
     liveUrl: "https://pokedexpp.vercel.app",
     githubUrl: "https://github.com/jleo28/pokedex-plus",
-    imageUrl:
-      "https://image.thum.io/get/width/1280/crop/720/https://pokedexpp.vercel.app",
+    imageUrl: "/projects/pokedex/poster.jpg",
+    previewVideo: "/projects/pokedex/preview.mp4",
   },
   {
     name: "InBite",
