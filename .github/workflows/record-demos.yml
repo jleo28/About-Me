@@ -1,0 +1,58 @@
+name: Record project previews
+
+# Re-records the silent preview clips on the project cards.
+# Run it from the Actions tab ("Run workflow") after a project changes,
+# optionally listing which projects to record (e.g. "litmus inbite").
+on:
+  workflow_dispatch:
+    inputs:
+      projects:
+        description: "Space-separated projects (porttable litmus trailfinder pokedex inbite). Blank = default set."
+        required: false
+        default: ""
+  push:
+    branches: [main]
+    paths:
+      - scripts/record-demos.mjs
+      - .github/workflows/record-demos.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: record-demos
+  cancel-in-progress: true
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save --no-package-lock playwright@1
+          npx playwright install --with-deps chromium
+
+      - name: Record
+        env:
+          # InBite is left out by default while its database is paused.
+          DEFAULT_PROJECTS: porttable litmus trailfinder pokedex
+        run: node scripts/record-demos.mjs ${{ github.event.inputs.projects || env.DEFAULT_PROJECTS }}
+
+      - name: Commit clips
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add public/projects
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update project preview clips"
+            git push
+          fi
