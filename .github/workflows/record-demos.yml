@@ -34,8 +34,9 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install Playwright
+      - name: Install Playwright and ffmpeg
         run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
           npm install --no-save --no-package-lock playwright@1
           npx playwright install --with-deps chromium
 

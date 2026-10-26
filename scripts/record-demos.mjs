@@ -153,7 +153,8 @@ for (const slug of slugs) {
       "-frames:v", "1", "-q:v", "4", join(outDir, "poster.jpg")]);
     console.log(`  saved ${outDir}/preview.mp4 (${seconds.toFixed(1)}s)`);
   } catch (err) {
-    console.error(`  ${slug} failed: ${err.message}`);
+    // ::error:: lines show up as annotations on the run page without signing in.
+    console.error(`::error title=${slug}::${String(err.message).split("\n")[0]}`);
     failures.push(slug);
     await context.close().catch(() => {});
   } finally {
